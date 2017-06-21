@@ -1,28 +1,38 @@
-  var prompt = require('prompt')
-  var cats = require('./cats.json')
-  var jsonfile = require('jsonfile')
-  var _ = require('lodash')
-
-
-
+var cats = require('./cats.json')
+var jsonfile = require('jsonfile')
+var _ = require('lodash')
+var keypress = require('keypress')
+var readline = require('readline');
 
 
 module.exports = function () {
-
-    var readline = require('readline');
-    var input = [];
-
     var rl = readline.createInterface({
         input: process.stdin,
         output: process.stdout
     });
+    var input = [];
+
 
     var catName;
     var catAscii;
-    rl.question('Please enter the name of cat: ', (name) => {
-        console.log('Paste in your ascii cat followed by ^D')
+    var time;
+    
+
+    keypress(process.stdin);
+
+    console.log("A D D   A   C A T")
+    rl.question('Please enter the name of your new cat: ', (name) => {
+        console.log('Paste in your ascii cat followed by the enter key: ')
         rl.on('line', function (cmd) {
+            time === undefined ? time = new Date() : null
             input.push(cmd);
+            process.stdin.on('keypress', function(chunk, key) {
+
+                if(key && key.name === 'return'){
+                    time-new Date() < -100 ? rl.close() : null
+                }
+            })
+            // cmd === "" ? rl.close() : null
         });
         catName = name;
         catAscii = input;
@@ -38,8 +48,17 @@ module.exports = function () {
         var buff = new Buffer.from(JSON.stringify(cats));
         var file = 'cats.json'
         jsonfile.writeFile(file, returnCats, function(err){
-            console.log(err)
+            if(err){
+                console.log(err)
+            }else
+            {
+                console.log(catName + " has been added!")
+            }
         })
+    });
+
+    rl.on('SIGINT', () => {
+         process.exit(0);
     });
 
     return ""
