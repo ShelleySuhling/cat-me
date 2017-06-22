@@ -74,10 +74,41 @@ print a cat to your console
 
 Options:
   -c, --cats  get list of cat names
-  -h, --help  Show help                                                [boolean]
+  -h, --help  Show help                                           [boolean]
+  -a, --add   add a new cat
+
 
 Examples:
   catMe
   catMe nyan
 
 ```
+
+### ADD
+
+`cat-me -a`
+
+```
+A D D   A   C A T
+Please enter the name of your new cat:
+cat_name
+Paste in your ascii cat followed by the enter key:
+                         .-.
+                          \ \
+                           \ \
+                            | |
+                            | |
+          /\---/\   _,---._ | |
+         /^   ^  \,'       `. ;
+        ( O   O   )           ;
+         `.=o=__,'            \
+           /         _,--.__   \
+          /  _ )   ,'   `-. `-. \
+         / ,' /  ,'        \ \ \ \
+        / /  / ,'          (,_)(,_)
+       (,;  (,,)      
+
+cat_name has been added!
+```
+
+
