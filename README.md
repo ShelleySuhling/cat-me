@@ -81,6 +81,7 @@ Options:
 Examples:
   catMe
   catMe nyan
+  catMe -a new_cat_name
 
 ```
 
