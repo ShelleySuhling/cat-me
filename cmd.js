@@ -43,7 +43,7 @@ if(argv.c){
    var output = 'CAT OPTIONS: ' + catMe.catNames.join(', ')
 }
 else if (argv.add){
-  var output = add()
+  var output = add(argv.add)
 }
 else {
   var output = catMe(choice)

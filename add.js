@@ -5,7 +5,7 @@ var keypress = require('keypress')
 var readline = require('readline');
 
 
-module.exports = function () {
+module.exports = function (name) {
     var rl = readline.createInterface({
         input: process.stdin,
         output: process.stdout
@@ -20,23 +20,21 @@ module.exports = function () {
 
     keypress(process.stdin);
 
-    console.log("A D D   A   C A T")
-    rl.question('Please enter the name of your new cat: ', (name) => {
+    console.log("A D D   A   C A T\n")
         console.log('Paste in your ascii cat followed by the enter key: ')
         rl.on('line', function (cmd) {
-            time === undefined ? time = new Date() : null
-            input.push(cmd);
-            process.stdin.on('keypress', function(chunk, key) {
+        time === undefined ? time = new Date() : null
+        input.push(cmd);
+        process.stdin.on('keypress', function(chunk, key) {
 
-                if(key && key.name === 'return'){
-                    time-new Date() < -100 ? rl.close() : null
-                }
-            })
-            // cmd === "" ? rl.close() : null
+            if(key && key.name === 'return'){
+                time-new Date() < -100 ? rl.close() : null
+            }
+        })
+        // cmd === "" ? rl.close() : null
         });
         catName = name;
         catAscii = input;
-    });
 
     rl.on('close', function (cmd) {
         var returnCats = {}
@@ -52,7 +50,7 @@ module.exports = function () {
                 console.log(err)
             }else
             {
-                console.log(catName + " has been added!")
+                console.log("\n" + catName + " has been added!")
             }
         })
     });

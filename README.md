@@ -86,13 +86,13 @@ Examples:
 
 ### ADD
 
-`cat-me -a`
+`cat-me -a new_cat_name`
 
 ```
 A D D   A   C A T
-Please enter the name of your new cat:
-cat_name
+
 Paste in your ascii cat followed by the enter key:
+
                          .-.
                           \ \
                            \ \
@@ -108,7 +108,7 @@ Paste in your ascii cat followed by the enter key:
         / /  / ,'          (,_)(,_)
        (,;  (,,)      
 
-cat_name has been added!
+new_cat_name has been added!
 ```
 
 
