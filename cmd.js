@@ -24,7 +24,7 @@
 
 
 var catMe = require('./')
-var add = require('./add.js')
+var addComandLine = require('./addCommandLine.js')
 var argv = require('yargs')
   .alias('h', 'help')
   .help('help')
@@ -43,7 +43,7 @@ if(argv.c){
    var output = 'CAT OPTIONS: ' + catMe.catNames.join(', ')
 }
 else if (argv.add){
-  var output = add(argv.add)
+  var output = addComandLine(argv.add)
 }
 else {
   var output = catMe(choice)

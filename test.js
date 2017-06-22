@@ -30,3 +30,4 @@ tap.test('returns a list of cat names', function (t) {
   var catNames = catMe.catNames
   t.ok(catNames.indexOf('grumpy') !== -1, 'does it')
 })
+
