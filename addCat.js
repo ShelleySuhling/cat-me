@@ -2,12 +2,9 @@ var cats = require('./cats.json')
 var catMe = require('./index.js')
 var jsonfile = require('jsonfile')
 var _ = require('lodash')
-var keypress = require('keypress')
-var readline = require('readline');
 
 
 module.exports = function (catName, catAscii) {
-    var status = {}
     var returnCats = {}
     _.map(cats, (cat, name)=> {
         returnCats[name] = cat.split("\n")
